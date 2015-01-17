@@ -29,7 +29,7 @@ for tiedosto in sys.argv[1:]:
 
 
 
-for x in laskuri.keys():
+for x in sorted( laskuri.keys() ):
 
     a = laskuri[x]
 
