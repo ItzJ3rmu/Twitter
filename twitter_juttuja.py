@@ -3,9 +3,11 @@ from pprint import pprint
 import datetime
 import sys
 
+laskuri = {}
+
 for tiedosto in sys.argv[1:]:
 
-    laskuri = {}
+
 
     with open(tiedosto) as json_data:
         d = json.load(json_data)
@@ -21,17 +23,14 @@ for tiedosto in sys.argv[1:]:
 
             teema_lista = tweet['text']
 
-            print teema_lista
+            ## print teema_lista
 
     #pprint (laskuri)
 
 
-    avain = laskuri.keys()
 
-    #print avain
+for x in laskuri.keys():
 
-    for x in avain:
+    a = laskuri[x]
 
-        a = laskuri[x]
-
-        print x,",", a
+    print x,",", a
