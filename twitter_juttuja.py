@@ -1,9 +1,8 @@
-def twitteri():
+import json
+from pprint import pprint
+import datetime
 
-    import json
-    from pprint import pprint
-    import datetime
-    import collections
+def twitteri():
 
     tiedosto = raw_input("Tiedoston nimi: ")
 
@@ -35,5 +34,5 @@ def twitteri():
     for x in avain:
 
         a = laskuri[x]
-    
+
         print x,",", a
