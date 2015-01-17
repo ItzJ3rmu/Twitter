@@ -1,10 +1,9 @@
 import json
 from pprint import pprint
 import datetime
+import sys
 
-def twitteri():
-
-    tiedosto = raw_input("Tiedoston nimi: ")
+for tiedosto in sys.argv[1:]:
 
     laskuri = {}
 
