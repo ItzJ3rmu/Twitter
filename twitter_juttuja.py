@@ -1,21 +1,21 @@
-def twitteri():
+import json
+from pprint import pprint
+import datetime
+import sys
 
-    import json
-    from pprint import pprint
-    import datetime
-    import collections
+laskuri = {}
 
-    tiedosto = raw_input("Tiedoston nimi: ")
-
-    laskuri = {}
+for tiedosto in sys.argv[1:]:
 
     with open(tiedosto) as json_data:
         d = json.load(json_data)
         json_data.close()
+
         for tweet in d:
             aika = datetime.datetime.fromtimestamp(
                     int(tweet['time'])
                 ).strftime('%Y-%m-%d')
+
             if aika not in laskuri:
                 laskuri[aika] = 0
 
@@ -23,17 +23,7 @@ def twitteri():
 
             teema_lista = tweet['text']
 
-            print teema_lista
+            ## print teema_lista
 
-    #pprint (laskuri)
-
-
-    avain = laskuri.keys()
-
-    #print avain
-
-    for x in avain:
-
-        a = laskuri[x]
-    
-        print x,",", a
+for paiva in sorted( laskuri.keys() ):
+    print paiva , "," , laskuri[ paiva ]
